@@ -1,0 +1,18 @@
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+      <h3 class="mb-0">
+          Formulaire de connexion
+      </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="soumissionFormulaire()">
+          <input class="form-control" name="id" [(ngModel)]="utilisateur.id" placeholder="Votre identifiant" type="text" required>
+          <input class="form-control" name="mdp" [(ngModel)]="utilisateur.mdp" #ctlMdp="ngModel" placeholder="Votre mot de passe" type="password" required minlength="4">
+          <span *ngIf="ctlMdp.invalid">Merci de saisir un mot de passe valide</span>
+          <input class="btn btn-primary" name="envoyer" type="submit" value="ENVOYER" [disabled]="f.invalid">
+          <input class="btn btn-primary" name="annuler" type="reset" value="ANNULER">
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+<div class="card m-3">
+    <div class="row no-gutters">
+        <div class="mx-auto my-auto">
+            <img [src]="servEtu.listeEtudiants[indexEtudiant].photo">
+        </div>
+        <div class="card m-3 col-md-8">
+            <div class="card-header" id="headingOne">
+                <h3 class="card-title">{{servEtu.listeEtudiants[indexEtudiant].nom}}, {{servEtu.listeEtudiants[indexEtudiant].prenom}}</h3>
+            </div>
+    
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p class="card-text"><em>Promotion : {{servEtu.listeEtudiants[indexEtudiant].promo}}</em></p>
+                    <p class="card-text"><em>Spécialités : {{servEtu.listeEtudiants[indexEtudiant].specialites}}</em></p>
+                    <p class="card-text"><em>Age : {{servEtu.listeEtudiants[indexEtudiant].age}}</em></p>
+                    <p class="card-text"><em>Mail : {{servEtu.listeEtudiants[indexEtudiant].mail}}</em></p>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

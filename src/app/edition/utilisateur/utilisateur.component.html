@@ -1,0 +1,42 @@
+<div class="card m-3">
+    <div class="row no-gutters">
+        <div class="mx-auto my-auto">
+            <img [src]="servUti.utilisateur.photo">
+        </div>
+        <div class="card m-3 col-md-8">
+            <div class="card-header" id="headingOne">
+                <h3 class="card-title">{{servUti.utilisateur.nom}}, {{servUti.utilisateur.prenom}}</h3>
+            </div>
+    
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p class="card-text"><em>Promotion : {{servUti.utilisateur.promo}}</em></p>
+                    <p class="card-text"><em>Spécialités : {{servUti.utilisateur.specialites}}</em></p>
+                    <p class="card-text"><em>Age : {{servUti.utilisateur.age}}</em></p>
+                    <p class="card-text"><em>Mail : {{servUti.utilisateur.mail}}</em></p>        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card m-3">
+    <div class="card-header" id="headingOne">
+        <h3 class="card-title">
+            Formulaire d'édition d'un utilisateur
+        </h3>
+    </div>
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+            <form  #f="ngForm" (ngSubmit)="soumissionFormulaire(f)">
+                <input class="form-control" name="nom" [(ngModel)]="utilisateur.nom" placeholder="Nom" type="text" required>
+                <input class="form-control" name="prenom" [(ngModel)]="utilisateur.prenom" placeholder="Prénom" type="text" required>
+                <input class="form-control" name="email" [(ngModel)]="utilisateur.mail" #ctlMail="ngModel" placeholder="Email" type="email" required>
+                <input class="form-control" name="promo" [(ngModel)]="utilisateur.promo" placeholder="Promo" type="text" required>
+                <input class="form-control" name="specialites" [(ngModel)]="utilisateur.specialites" placeholder="Spécilaités" type="text" required>
+                <input class="form-control" name="age" [(ngModel)]="utilisateur.age" placeholder="Age" type="text">
+                <input class="btn btn-primary" name="envoyer" type="submit" value="ENVOYER" [disabled]="f.invalid">
+                <input class="btn btn-primary" name="annuler" type="reset" value="ANNULER">
+            </form>
+        </div>
+    </div>
+</div>

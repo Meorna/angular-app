@@ -1,0 +1,20 @@
+<div class="card m-3">
+  <div class="card-header" id="headingOne">
+    <h3 class="mb-0">
+        Formulaire de contact
+    </h3>
+  </div>
+  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="soumissionFormulaire(f)">
+        <input class="form-control" name="nom" [(ngModel)]="contact.nom" (input)="suiviInput()" placeholder="Votre nom" type="text" required>
+        <input class="form-control" name="email" [(ngModel)]="contact.email" #ctlMail="ngModel" placeholder="Votre email" type="email" required>
+        <span *ngIf="ctlMail.invalid">Merci de saisir un email</span>
+        <input class="form-control" name="sujet" [(ngModel)]="contact.sujet" placeholder="Sujet du message" type="text" required>
+        <textarea class="form-control" name="message" [(ngModel)]="contact.message" placeholder="Votre message" required></textarea>
+        <input class="btn btn-primary" name="envoyer" type="submit" value="ENVOYER" [disabled]="f.invalid">
+        <input class="btn btn-primary" name="annuler" type="reset" value="ANNULER">
+      </form>
+    </div>
+  </div>
+</div>

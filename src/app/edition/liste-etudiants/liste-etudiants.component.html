@@ -1,0 +1,19 @@
+<div class="card-group ml-4">
+    <input class="form-control" name="tri" [(ngModel)]="tri" #ctrlTri="ngModel" placeholder="Filtrer les étudiants par nom" type="text">
+    <div class="row">
+        <button class="btn btn-primary m-2" (click)="setPagination(-3)"><fa-icon [icon]="faArrowCircleLeft"></fa-icon></button>
+        <div class="card m-2" *ngFor="let etudiant of servEtu.listeEtudiants | etuPipe:tri | slice:pagination.min:pagination.max; let i=index">
+            <div class="card-body">
+                <img [src]="etudiant.photo">
+            </div>
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <a href routerLink="/edition/etudiant/{{ etudiant.id }}" class="btn btn-link" >
+                        <span>{{etudiant.nom | uppercase}}, {{etudiant.prenom}}</span>
+                    </a>
+                </h2>
+            </div>
+        </div>
+        <button class="btn btn-primary m-2" (click)="setPagination(3)"><fa-icon [icon]="faArrowCircleRight"></fa-icon></button>
+    </div>
+</div>

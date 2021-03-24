@@ -1,0 +1,27 @@
+<main>
+    <header>   
+      <div class="card m-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!--<span class="navbar-brand" href="#">Menu</span>-->
+            <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{ 'show': navbarOpen }">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href routerLink="/edition/listeEtudiants">Editer étudiant</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href routerLink="/edition/utilisateur">Editer utilisateur</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      </div>
+    </header>
+    <section>
+      <!-- Espace dans lequel le routeur viendra afficher des composants-->
+      <router-outlet></router-outlet>
+    </section>
+  </main>
